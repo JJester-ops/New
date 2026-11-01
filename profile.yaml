@@ -1,0 +1,12 @@
+# What kind of business you'd actually run. The weekly run scores every
+# TrustMRR startup against this. Edit freely — plain words are fine.
+operator:
+  solo: true                 # must be runnable by one person
+  skills: [TODO]             # e.g. [no-code, copywriting, python, design]
+  hours_per_week: 10
+  budget_usd: 500
+revenue_window_usd: [1000, 20000]   # last-30-day revenue band you care about
+prefer:                       # categories / shapes you like
+  - TODO                      # e.g. "b2b niche tool", "AI wrapper with a clear pain"
+avoid:                        # categories you'd never build
+  - TODO                      # e.g. "crypto", "dating", "marketplaces needing liquidity"
