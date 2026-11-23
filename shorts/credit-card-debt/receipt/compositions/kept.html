@@ -1,0 +1,127 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #kept-bg {
+      position: absolute;
+      inset: 0;
+      background: #0b6b3a;
+    }
+    #kept-money {
+      position: absolute;
+      left: 48px;
+      right: 192px;
+      top: 380px;
+      text-align: center;
+      color: #faf7f0;
+    }
+    #kept-label {
+      font-family: "League Gothic", sans-serif;
+      font-size: 170px;
+      line-height: 1;
+      letter-spacing: 0.01em;
+    }
+    #kept-num {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 196px;
+      letter-spacing: -0.04em;
+      line-height: 1.2;
+      color: #ffd60a;
+    }
+    #kept-math {
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      font-size: 40px;
+      margin-top: 18px;
+    }
+    #kept-rule {
+      position: absolute;
+      left: 48px;
+      right: 192px;
+      top: 360px;
+      text-align: center;
+      color: #141414;
+    }
+    .kept-line {
+      font-family: "League Gothic", sans-serif;
+      font-size: 190px;
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+    }
+    #kept-min {
+      position: relative;
+      display: inline-block;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 150px;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: #b3141b;
+    }
+    #kept-strike {
+      position: absolute;
+      left: -14px;
+      right: -14px;
+      top: 52%;
+      height: 16px;
+      background: #141414;
+      transform-origin: left center;
+    }
+    #kept-fixed {
+      margin-top: 40px;
+      font-family: "League Gothic", sans-serif;
+      font-size: 130px;
+      line-height: 1;
+    }
+    #kept-fixed em {
+      font-style: normal;
+      color: #0b6b3a;
+    }
+  </style>
+  <div id="root" data-composition-id="kept" data-width="1080" data-height="1920">
+    <div id="kept-bg"></div>
+    <div id="kept-money">
+      <div id="kept-label">YOU KEEP</div>
+      <div id="kept-num">+$0</div>
+      <div id="kept-math">$8,887 − $1,449</div>
+    </div>
+    <div id="kept-rule">
+      <div class="kept-line" id="kept-never">NEVER PAY THE</div>
+      <div id="kept-min">MINIMUM<span id="kept-strike"></span></div>
+      <div id="kept-fixed">PICK A <em>FIXED</em> NUMBER</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const numEl = document.querySelector("#kept-num");
+    const kept = { v: 0 };
+    const fmt = (v) => "+$" + Math.round(v).toLocaleString("en-US");
+
+    tl.fromTo("#kept-label", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 0.18);
+    tl.fromTo("#kept-num", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 0.82);
+    tl.fromTo(
+      kept,
+      { v: 0 },
+      {
+        v: 7438,
+        duration: 1.6,
+        ease: "power3.out",
+        onUpdate: () => {
+          numEl.textContent = fmt(kept.v);
+        },
+      },
+      0.85,
+    );
+    tl.fromTo("#kept-math", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "none" }, 1.9);
+    // Flood to paper for the rule
+    tl.to("#kept-money", { opacity: 0, filter: "blur(10px)", duration: 0.18, ease: "power2.in" }, 3.78);
+    tl.fromTo("#kept-bg", { backgroundColor: "#0b6b3a" }, { backgroundColor: "#faf7f0", duration: 0.4, ease: "power2.inOut" }, 3.8);
+    tl.fromTo("#kept-never", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, 4.06);
+    tl.fromTo("#kept-min", { opacity: 0, scale: 1.2 }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out" }, 4.62);
+    tl.fromTo("#kept-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "power2.out" }, 5.05);
+    tl.fromTo("#kept-fixed", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 5.48);
+    window.__timelines["kept"] = tl;
+  </script>
+</template>

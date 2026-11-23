@@ -1,0 +1,92 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .cap {
+      position: absolute;
+      left: 48px;
+      right: 192px;
+      top: 1120px;
+      height: 120px;
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 74px;
+      line-height: 120px;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      word-spacing: 0.12em;
+      color: #ffffff;
+      -webkit-text-stroke: 12px #141414;
+      paint-order: stroke fill;
+      opacity: 0;
+      overflow: visible;
+    }
+    .cap-hl {
+      color: #ffd60a;
+      font-size: 92px;
+    }
+  </style>
+  <div id="root" data-composition-id="captions" data-width="1080" data-height="1920">
+    <div class="cap cap-hl" id="cap-0" style="font-size: 92px; -webkit-text-stroke-width: 14px">$5,000</div>
+    <div class="cap" id="cap-1" style="font-size: 69px; -webkit-text-stroke-width: 10px">on a credit card</div>
+    <div class="cap cap-hl" id="cap-2" style="font-size: 92px; -webkit-text-stroke-width: 14px">$8,887</div>
+    <div class="cap" id="cap-3" style="font-size: 74px; -webkit-text-stroke-width: 11px">in interest.</div>
+    <div class="cap" id="cap-4" style="font-size: 61px; -webkit-text-stroke-width: 9px">That&#x27;s if you only</div>
+    <div class="cap" id="cap-5" style="font-size: 69px; -webkit-text-stroke-width: 10px">pay the minimum,</div>
+    <div class="cap cap-hl" id="cap-6" style="font-size: 92px; -webkit-text-stroke-width: 14px">at 24%</div>
+    <div class="cap" id="cap-7" style="font-size: 74px; -webkit-text-stroke-width: 11px">And it takes</div>
+    <div class="cap cap-hl" id="cap-8" style="font-size: 92px; -webkit-text-stroke-width: 14px">19.5 years.</div>
+    <div class="cap" id="cap-9" style="font-size: 73px; -webkit-text-stroke-width: 11px">Now pay a fixed</div>
+    <div class="cap cap-hl" id="cap-10" style="font-size: 92px; -webkit-text-stroke-width: 14px">$250 a month</div>
+    <div class="cap" id="cap-11" style="font-size: 74px; -webkit-text-stroke-width: 11px">instead.</div>
+    <div class="cap cap-hl" id="cap-12" style="font-size: 92px; -webkit-text-stroke-width: 14px">26 months.</div>
+    <div class="cap cap-hl" id="cap-13" style="font-size: 92px; -webkit-text-stroke-width: 14px">$1,449</div>
+    <div class="cap" id="cap-14" style="font-size: 74px; -webkit-text-stroke-width: 11px">in interest.</div>
+    <div class="cap" id="cap-15" style="font-size: 74px; -webkit-text-stroke-width: 11px">You just kept</div>
+    <div class="cap cap-hl" id="cap-16" style="font-size: 92px; -webkit-text-stroke-width: 14px">$7,438</div>
+    <div class="cap" id="cap-17" style="font-size: 74px; -webkit-text-stroke-width: 11px">Never pay</div>
+    <div class="cap" id="cap-18" style="font-size: 74px; -webkit-text-stroke-width: 11px">the minimum.</div>
+    <div class="cap" id="cap-19" style="font-size: 55px; -webkit-text-stroke-width: 8px">Pick a fixed number,</div>
+    <div class="cap" id="cap-20" style="font-size: 69px; -webkit-text-stroke-width: 10px">and stick to it.</div>
+    <div class="cap" id="cap-21" style="font-size: 61px; -webkit-text-stroke-width: 9px">Follow for part 2:</div>
+    <div class="cap" id="cap-22" style="font-size: 74px; -webkit-text-stroke-width: 11px">how to drop</div>
+    <div class="cap cap-hl" id="cap-23" style="font-size: 61px; -webkit-text-stroke-width: 9px">that rate to zero.</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    function show(sel, start, end) {
+      tl.fromTo(sel, { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: 0.12, ease: "back.out(2)" }, start);
+      tl.to(sel, { opacity: 0, duration: 0.08, ease: "power2.in" }, end - 0.08);
+      tl.set(sel, { opacity: 0, visibility: "hidden" }, end);
+    }
+    show("#cap-0", 0.12, 1.115);
+    show("#cap-1", 1.125, 2.47);
+    show("#cap-2", 2.68, 5.012);
+    show("#cap-3", 5.022, 6.037);
+    show("#cap-4", 6.047, 6.787);
+    show("#cap-5", 6.797, 7.847);
+    show("#cap-6", 7.897, 9.347);
+    show("#cap-7", 9.357, 10.023);
+    show("#cap-8", 10.033, 11.517);
+    show("#cap-9", 11.827, 12.778);
+    show("#cap-10", 12.788, 14.123);
+    show("#cap-11", 14.133, 14.767);
+    show("#cap-12", 14.777, 16.087);
+    show("#cap-13", 16.167, 17.455);
+    show("#cap-14", 17.465, 18.507);
+    show("#cap-15", 18.567, 19.191);
+    show("#cap-16", 19.201, 22.263);
+    show("#cap-17", 22.423, 22.859);
+    show("#cap-18", 22.869, 23.763);
+    show("#cap-19", 23.843, 24.763);
+    show("#cap-20", 24.773, 25.693);
+    show("#cap-21", 25.753, 27.243);
+    show("#cap-22", 27.323, 27.913);
+    show("#cap-23", 27.923, 29.573);
+    window.__timelines["captions"] = tl;
+  </script>
+</template>

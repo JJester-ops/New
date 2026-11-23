@@ -1,0 +1,571 @@
+{
+ "lines": [
+  {
+   "id": "l0",
+   "start": 0.1,
+   "end": 5.817,
+   "text": "Five thousand dollars on a credit card. Eight thousand, eight hundred eighty seven in interest."
+  },
+  {
+   "id": "l1",
+   "start": 6.067,
+   "end": 9.177,
+   "text": "That's if you only pay the minimum, at twenty four percent."
+  },
+  {
+   "id": "l2",
+   "start": 9.377,
+   "end": 11.297,
+   "text": "And it takes nineteen and a half years."
+  },
+  {
+   "id": "l3",
+   "start": 11.847,
+   "end": 14.597,
+   "text": "Now pay a fixed two hundred fifty a month instead."
+  },
+  {
+   "id": "l4",
+   "start": 14.797,
+   "end": 18.287,
+   "text": "Twenty six months. Fourteen hundred forty nine in interest."
+  },
+  {
+   "id": "l5",
+   "start": 18.587,
+   "end": 22.043,
+   "text": "You just kept seven thousand, four hundred thirty eight dollars."
+  },
+  {
+   "id": "l6",
+   "start": 22.443,
+   "end": 25.473,
+   "text": "Never pay the minimum. Pick a fixed number, and stick to it."
+  },
+  {
+   "id": "l7",
+   "start": 25.773,
+   "end": 29.003,
+   "text": "Follow for part two: how to drop that rate to zero."
+  }
+ ],
+ "words": [
+  {
+   "id": "w0",
+   "text": "Five",
+   "start": 0.13,
+   "end": 0.339
+  },
+  {
+   "id": "w1",
+   "text": "thousand",
+   "start": 0.339,
+   "end": 0.757
+  },
+  {
+   "id": "w2",
+   "text": "dollars",
+   "start": 0.757,
+   "end": 1.175
+  },
+  {
+   "id": "w3",
+   "text": "on",
+   "start": 1.175,
+   "end": 1.384
+  },
+  {
+   "id": "w4",
+   "text": "a",
+   "start": 1.384,
+   "end": 1.593
+  },
+  {
+   "id": "w5",
+   "text": "credit",
+   "start": 1.593,
+   "end": 2.011
+  },
+  {
+   "id": "w6",
+   "text": "card.",
+   "start": 2.011,
+   "end": 2.22
+  },
+  {
+   "id": "w7",
+   "text": "Eight",
+   "start": 2.73,
+   "end": 2.983
+  },
+  {
+   "id": "w8",
+   "text": "thousand,",
+   "start": 2.983,
+   "end": 3.49
+  },
+  {
+   "id": "w9",
+   "text": "eight",
+   "start": 3.82,
+   "end": 3.999
+  },
+  {
+   "id": "w10",
+   "text": "hundred",
+   "start": 3.999,
+   "end": 4.356
+  },
+  {
+   "id": "w11",
+   "text": "eighty",
+   "start": 4.356,
+   "end": 4.714
+  },
+  {
+   "id": "w12",
+   "text": "seven",
+   "start": 4.714,
+   "end": 5.072
+  },
+  {
+   "id": "w13",
+   "text": "in",
+   "start": 5.072,
+   "end": 5.251
+  },
+  {
+   "id": "w14",
+   "text": "interest.",
+   "start": 5.251,
+   "end": 5.787
+  },
+  {
+   "id": "w15",
+   "text": "That's",
+   "start": 6.097,
+   "end": 6.247
+  },
+  {
+   "id": "w16",
+   "text": "if",
+   "start": 6.247,
+   "end": 6.397
+  },
+  {
+   "id": "w17",
+   "text": "you",
+   "start": 6.397,
+   "end": 6.547
+  },
+  {
+   "id": "w18",
+   "text": "only",
+   "start": 6.547,
+   "end": 6.847
+  },
+  {
+   "id": "w19",
+   "text": "pay",
+   "start": 6.847,
+   "end": 6.997
+  },
+  {
+   "id": "w20",
+   "text": "the",
+   "start": 6.997,
+   "end": 7.147
+  },
+  {
+   "id": "w21",
+   "text": "minimum,",
+   "start": 7.147,
+   "end": 7.597
+  },
+  {
+   "id": "w22",
+   "text": "at",
+   "start": 7.947,
+   "end": 8.147
+  },
+  {
+   "id": "w23",
+   "text": "twenty",
+   "start": 8.147,
+   "end": 8.547
+  },
+  {
+   "id": "w24",
+   "text": "four",
+   "start": 8.547,
+   "end": 8.747
+  },
+  {
+   "id": "w25",
+   "text": "percent.",
+   "start": 8.747,
+   "end": 9.147
+  },
+  {
+   "id": "w26",
+   "text": "And",
+   "start": 9.407,
+   "end": 9.576
+  },
+  {
+   "id": "w27",
+   "text": "it",
+   "start": 9.576,
+   "end": 9.745
+  },
+  {
+   "id": "w28",
+   "text": "takes",
+   "start": 9.745,
+   "end": 10.083
+  },
+  {
+   "id": "w29",
+   "text": "nineteen",
+   "start": 10.083,
+   "end": 10.591
+  },
+  {
+   "id": "w30",
+   "text": "and",
+   "start": 10.591,
+   "end": 10.76
+  },
+  {
+   "id": "w31",
+   "text": "a",
+   "start": 10.76,
+   "end": 10.929
+  },
+  {
+   "id": "w32",
+   "text": "half",
+   "start": 10.929,
+   "end": 11.098
+  },
+  {
+   "id": "w33",
+   "text": "years.",
+   "start": 11.098,
+   "end": 11.267
+  },
+  {
+   "id": "w34",
+   "text": "Now",
+   "start": 11.877,
+   "end": 12.069
+  },
+  {
+   "id": "w35",
+   "text": "pay",
+   "start": 12.069,
+   "end": 12.261
+  },
+  {
+   "id": "w36",
+   "text": "a",
+   "start": 12.261,
+   "end": 12.453
+  },
+  {
+   "id": "w37",
+   "text": "fixed",
+   "start": 12.453,
+   "end": 12.838
+  },
+  {
+   "id": "w38",
+   "text": "two",
+   "start": 12.838,
+   "end": 13.03
+  },
+  {
+   "id": "w39",
+   "text": "hundred",
+   "start": 13.03,
+   "end": 13.414
+  },
+  {
+   "id": "w40",
+   "text": "fifty",
+   "start": 13.414,
+   "end": 13.798
+  },
+  {
+   "id": "w41",
+   "text": "a",
+   "start": 13.798,
+   "end": 13.991
+  },
+  {
+   "id": "w42",
+   "text": "month",
+   "start": 13.991,
+   "end": 14.183
+  },
+  {
+   "id": "w43",
+   "text": "instead.",
+   "start": 14.183,
+   "end": 14.567
+  },
+  {
+   "id": "w44",
+   "text": "Twenty",
+   "start": 14.827,
+   "end": 15.332
+  },
+  {
+   "id": "w45",
+   "text": "six",
+   "start": 15.332,
+   "end": 15.584
+  },
+  {
+   "id": "w46",
+   "text": "months.",
+   "start": 15.584,
+   "end": 15.837
+  },
+  {
+   "id": "w47",
+   "text": "Fourteen",
+   "start": 16.217,
+   "end": 16.588
+  },
+  {
+   "id": "w48",
+   "text": "hundred",
+   "start": 16.588,
+   "end": 16.959
+  },
+  {
+   "id": "w49",
+   "text": "forty",
+   "start": 16.959,
+   "end": 17.33
+  },
+  {
+   "id": "w50",
+   "text": "nine",
+   "start": 17.33,
+   "end": 17.515
+  },
+  {
+   "id": "w51",
+   "text": "in",
+   "start": 17.515,
+   "end": 17.701
+  },
+  {
+   "id": "w52",
+   "text": "interest.",
+   "start": 17.701,
+   "end": 18.257
+  },
+  {
+   "id": "w53",
+   "text": "You",
+   "start": 18.617,
+   "end": 18.828
+  },
+  {
+   "id": "w54",
+   "text": "just",
+   "start": 18.828,
+   "end": 19.04
+  },
+  {
+   "id": "w55",
+   "text": "kept",
+   "start": 19.04,
+   "end": 19.251
+  },
+  {
+   "id": "w56",
+   "text": "seven",
+   "start": 19.251,
+   "end": 19.674
+  },
+  {
+   "id": "w57",
+   "text": "thousand,",
+   "start": 19.674,
+   "end": 20.097
+  },
+  {
+   "id": "w58",
+   "text": "four",
+   "start": 20.417,
+   "end": 20.617
+  },
+  {
+   "id": "w59",
+   "text": "hundred",
+   "start": 20.616,
+   "end": 21.015
+  },
+  {
+   "id": "w60",
+   "text": "thirty",
+   "start": 21.015,
+   "end": 21.415
+  },
+  {
+   "id": "w61",
+   "text": "eight",
+   "start": 21.415,
+   "end": 21.614
+  },
+  {
+   "id": "w62",
+   "text": "dollars.",
+   "start": 21.614,
+   "end": 22.013
+  },
+  {
+   "id": "w63",
+   "text": "Never",
+   "start": 22.473,
+   "end": 22.77
+  },
+  {
+   "id": "w64",
+   "text": "pay",
+   "start": 22.77,
+   "end": 22.919
+  },
+  {
+   "id": "w65",
+   "text": "the",
+   "start": 22.919,
+   "end": 23.067
+  },
+  {
+   "id": "w66",
+   "text": "minimum.",
+   "start": 23.067,
+   "end": 23.513
+  },
+  {
+   "id": "w67",
+   "text": "Pick",
+   "start": 23.893,
+   "end": 24.048
+  },
+  {
+   "id": "w68",
+   "text": "a",
+   "start": 24.048,
+   "end": 24.203
+  },
+  {
+   "id": "w69",
+   "text": "fixed",
+   "start": 24.203,
+   "end": 24.513
+  },
+  {
+   "id": "w70",
+   "text": "number,",
+   "start": 24.513,
+   "end": 24.823
+  },
+  {
+   "id": "w71",
+   "text": "and",
+   "start": 24.823,
+   "end": 24.978
+  },
+  {
+   "id": "w72",
+   "text": "stick",
+   "start": 24.978,
+   "end": 25.133
+  },
+  {
+   "id": "w73",
+   "text": "to",
+   "start": 25.133,
+   "end": 25.288
+  },
+  {
+   "id": "w74",
+   "text": "it.",
+   "start": 25.288,
+   "end": 25.443
+  },
+  {
+   "id": "w75",
+   "text": "Follow",
+   "start": 25.803,
+   "end": 26.279
+  },
+  {
+   "id": "w76",
+   "text": "for",
+   "start": 26.279,
+   "end": 26.517
+  },
+  {
+   "id": "w77",
+   "text": "part",
+   "start": 26.517,
+   "end": 26.755
+  },
+  {
+   "id": "w78",
+   "text": "two:",
+   "start": 26.755,
+   "end": 26.993
+  },
+  {
+   "id": "w79",
+   "text": "how",
+   "start": 27.373,
+   "end": 27.573
+  },
+  {
+   "id": "w80",
+   "text": "to",
+   "start": 27.573,
+   "end": 27.773
+  },
+  {
+   "id": "w81",
+   "text": "drop",
+   "start": 27.773,
+   "end": 27.973
+  },
+  {
+   "id": "w82",
+   "text": "that",
+   "start": 27.973,
+   "end": 28.173
+  },
+  {
+   "id": "w83",
+   "text": "rate",
+   "start": 28.173,
+   "end": 28.373
+  },
+  {
+   "id": "w84",
+   "text": "to",
+   "start": 28.373,
+   "end": 28.573
+  },
+  {
+   "id": "w85",
+   "text": "zero.",
+   "start": 28.573,
+   "end": 28.973
+  }
+ ],
+ "end": 29.003
+}

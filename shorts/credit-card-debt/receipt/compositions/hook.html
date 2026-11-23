@@ -1,0 +1,149 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #b3141b;
+      overflow: hidden;
+    }
+    #hook-wrap {
+      position: absolute;
+      left: 48px;
+      right: 192px;
+      top: 300px;
+      height: 780px;
+      display: flex;
+      justify-content: center;
+    }
+    #hook-receipt {
+      position: relative;
+      width: 720px;
+      height: 740px;
+      background: #faf7f0;
+      color: #141414;
+      padding: 44px 52px 0;
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      box-shadow: 0 18px 24px rgba(0, 0, 0, 0.25);
+    }
+    #hook-receipt::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -22px;
+      height: 22px;
+      background:
+        linear-gradient(135deg, #faf7f0 11px, transparent 0) 0 0 / 22px 22px repeat-x,
+        linear-gradient(225deg, #faf7f0 11px, transparent 0) 0 0 / 22px 22px repeat-x;
+    }
+    .hook-head {
+      text-align: center;
+      font-size: 34px;
+      letter-spacing: 0.12em;
+      padding-bottom: 22px;
+      border-bottom: 4px dashed #141414;
+    }
+    .hook-row {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      font-size: 42px;
+      padding: 22px 0 18px;
+    }
+    .hook-mark {
+      position: absolute;
+      left: -12px;
+      right: -12px;
+      top: 14px;
+      bottom: 10px;
+      background: #ffd60a;
+      z-index: 0;
+      transform-origin: left center;
+    }
+    .hook-row span {
+      position: relative;
+      z-index: 1;
+    }
+    .hook-rule {
+      border-bottom: 4px dashed #141414;
+      margin-top: 8px;
+    }
+    .hook-label {
+      text-align: center;
+      font-size: 36px;
+      letter-spacing: 0.08em;
+      padding-top: 30px;
+    }
+    #hook-total-wrap {
+      position: relative;
+      text-align: center;
+      margin-top: 4px;
+    }
+    #hook-total {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 172px;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: #b3141b;
+    }
+    #hook-total-mark {
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      top: 118px;
+      height: 64px;
+      background: #ffd60a;
+      z-index: 0;
+      transform-origin: left center;
+    }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920">
+    <div id="hook-wrap" data-layout-allow-overflow>
+      <div id="hook-receipt">
+        <div class="hook-head">CREDIT CARD</div>
+        <div class="hook-row" id="hook-row-bal">
+          <div class="hook-mark" id="hook-mark-bal"></div>
+          <span>BALANCE</span><span>$5,000</span>
+        </div>
+        <div class="hook-row" id="hook-row-pay">
+          <div class="hook-mark" id="hook-mark-pay"></div>
+          <span>PAYMENT</span><span>MINIMUM</span>
+        </div>
+        <div class="hook-row" id="hook-row-apr">
+          <div class="hook-mark" id="hook-mark-apr"></div>
+          <span>APR</span><span>24%</span>
+        </div>
+        <div class="hook-rule"></div>
+        <div class="hook-label">INTEREST YOU PAY</div>
+        <div id="hook-total-wrap">
+          <div id="hook-total-mark"></div>
+          <div id="hook-total">$8,887</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#hook-receipt", { rotation: -2 }, 0);
+    // $5,000 marker on "Five thousand dollars"
+    tl.fromTo("#hook-mark-bal", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power2.out" }, 0.13);
+    tl.to("#hook-mark-bal", { scaleX: 0, transformOrigin: "right center", duration: 0.2, ease: "power2.in" }, 2.6);
+    // Rows highlight as the voice names them
+    tl.to("#hook-total-mark", { scaleX: 0, transformOrigin: "right center", duration: 0.2, ease: "power2.in" }, 6.65);
+    tl.fromTo("#hook-mark-pay", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power2.out" }, 6.85);
+    tl.to("#hook-mark-pay", { scaleX: 0, transformOrigin: "right center", duration: 0.2, ease: "power2.in" }, 7.9);
+    tl.fromTo("#hook-mark-apr", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power2.out" }, 8.15);
+    // $8,887 lands on "Eight thousand"
+    tl.fromTo("#hook-wrap", { scale: 1 }, { scale: 1.07, duration: 0.7, ease: "power2.inOut" }, 2.55);
+    tl.fromTo("#hook-total-mark", { scaleX: 0 }, { scaleX: 1, duration: 0.28, ease: "power2.out" }, 2.73);
+    tl.fromTo("#hook-total", { scale: 1.18 }, { scale: 1, duration: 0.45, ease: "expo.out" }, 2.73);
+    tl.to("#hook-wrap", { scale: 1, duration: 0.6, ease: "power2.inOut" }, 6.6);
+    // Whip out upward into the payoff bar
+    tl.to("#hook-wrap", { y: -1500, filter: "blur(10px)", duration: 0.32, ease: "power3.in" }, 8.98);
+    window.__timelines["hook"] = tl;
+  </script>
+</template>

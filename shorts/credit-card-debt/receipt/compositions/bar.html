@@ -1,0 +1,193 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #b3141b;
+      overflow: hidden;
+      color: #faf7f0;
+    }
+    #bar-bg {
+      position: absolute;
+      inset: 0;
+      background: #b3141b;
+    }
+    .bar-count {
+      position: absolute;
+      left: 48px;
+      right: 192px;
+      top: 330px;
+      text-align: center;
+      font-family: "League Gothic", sans-serif;
+      font-size: 250px;
+      line-height: 1;
+      letter-spacing: 0.01em;
+    }
+    .bar-count small {
+      font-size: 130px;
+    }
+    #bar-track {
+      position: absolute;
+      left: 108px;
+      width: 720px;
+      top: 610px;
+      height: 96px;
+      background: rgba(20, 20, 20, 0.28);
+    }
+    #bar-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 720px;
+      background: #faf7f0;
+      transform-origin: left center;
+    }
+    #bar-ticks {
+      position: absolute;
+      left: 108px;
+      width: 720px;
+      top: 724px;
+      height: 40px;
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      font-size: 30px;
+    }
+    #bar-ticks span {
+      position: absolute;
+      top: 0;
+      transform: translateX(-50%);
+    }
+    .bar-field {
+      position: absolute;
+      left: 108px;
+      width: 720px;
+      top: 820px;
+      height: 230px;
+      text-align: center;
+    }
+    .bar-label {
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      font-size: 34px;
+      letter-spacing: 0.08em;
+    }
+    .bar-value {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 140px;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+    .bar-value small {
+      font-family: "League Gothic", sans-serif;
+      font-size: 80px;
+      letter-spacing: 0.02em;
+      margin-left: 14px;
+    }
+    #bar-old {
+      position: relative;
+      display: inline-block;
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      font-size: 56px;
+      opacity: 0.7;
+      margin-right: 24px;
+    }
+    #bar-strike {
+      position: absolute;
+      left: -6px;
+      right: -6px;
+      top: 50%;
+      height: 7px;
+      background: #faf7f0;
+      transform-origin: left center;
+    }
+    #bar-new {
+      color: #ffd60a;
+    }
+  </style>
+  <div id="root" data-composition-id="bar" data-width="1080" data-height="1920">
+    <div id="bar-bg"></div>
+    <div class="bar-count" id="bar-years" data-layout-allow-overlap><span id="bar-years-num">0</span> <small>YEARS</small></div>
+    <div class="bar-count" id="bar-months" data-layout-allow-overlap>26 <small>MONTHS</small></div>
+    <div id="bar-track"><div id="bar-fill"></div></div>
+    <div id="bar-ticks">
+      <span style="left: 0%">0</span><span style="left: 25%">5</span><span style="left: 50%">10</span
+      ><span style="left: 75%">15</span><span style="left: auto; right: 0; transform: none">20 YRS</span>
+    </div>
+    <div class="bar-field" id="bar-pay">
+      <div class="bar-label">MONTHLY PAYMENT</div>
+      <div class="bar-value"><span id="bar-pay-num">$150</span><small id="bar-pay-tag">MIN</small></div>
+    </div>
+    <div class="bar-field" id="bar-int">
+      <div class="bar-label">INTEREST YOU PAY</div>
+      <div class="bar-value">
+        <span id="bar-old">$8,887<span id="bar-strike"></span></span><span id="bar-new">$1,449</span>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const yearsEl = document.querySelector("#bar-years-num");
+    const payEl = document.querySelector("#bar-pay-num");
+    const tagEl = document.querySelector("#bar-pay-tag");
+    const yrs = { v: 0 };
+    const pay = { v: 150 };
+
+    // Enter: whip up from below, landing blurred then sharp
+    tl.fromTo(
+      ["#bar-years", "#bar-track", "#bar-ticks"],
+      { y: 900, filter: "blur(10px)" },
+      { y: 0, filter: "blur(0px)", duration: 0.42, ease: "expo.out", stagger: 0.05 },
+      0,
+    );
+    // 19.5 years: the bar crawls while the counter rolls
+    tl.fromTo("#bar-fill", { scaleX: 0 }, { scaleX: 0.975, duration: 1.4, ease: "power2.inOut" }, 0.45);
+    tl.fromTo(
+      yrs,
+      { v: 0 },
+      {
+        v: 19.5,
+        duration: 1.4,
+        ease: "power2.inOut",
+        onUpdate: () => {
+          yearsEl.textContent = (Math.round(yrs.v * 2) / 2).toFixed(1).replace(".0", "");
+        },
+      },
+      0.45,
+    );
+    // Colour flood to green on "Now pay a fixed"
+    tl.fromTo("#bar-bg", { backgroundColor: "#b3141b" }, { backgroundColor: "#0b6b3a", duration: 0.4, ease: "power2.inOut" }, 2.55);
+    tl.fromTo("#bar-pay", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 2.6);
+    // $150 MIN rolls to $250 FIXED on "two hundred fifty"
+    tl.fromTo(
+      pay,
+      { v: 150 },
+      {
+        v: 250,
+        duration: 0.36,
+        ease: "none",
+        immediateRender: false,
+        onUpdate: () => {
+          const v = Math.round(pay.v / 25) * 25;
+          payEl.textContent = "$" + v;
+          tagEl.textContent = v >= 250 ? "FIXED" : "MIN";
+        },
+      },
+      3.5,
+    );
+    tl.fromTo("#bar-pay-num", { color: "#faf7f0" }, { color: "#ffd60a", duration: 0.01 }, 3.86);
+    // Bar collapses to 26 months
+    tl.to("#bar-fill", { scaleX: 26 / 240, duration: 0.6, ease: "power4.out" }, 5.53);
+    tl.to("#bar-years", { opacity: 0, filter: "blur(8px)", duration: 0.15, ease: "power2.in" }, 5.45);
+    tl.fromTo("#bar-months", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.15, ease: "power4.out" }, 5.55);
+    // Interest: $8,887 struck, $1,449 lands
+    tl.to("#bar-pay", { opacity: 0, filter: "blur(8px)", duration: 0.15, ease: "power2.in" }, 6.6);
+    tl.fromTo("#bar-int", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, 6.72);
+    tl.fromTo("#bar-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "power2.out" }, 6.8);
+    tl.fromTo("#bar-new", { opacity: 0, scale: 1.25, filter: "blur(6px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.4, ease: "expo.out" }, 6.92);
+    // Exit: dip and lift out
+    tl.to(["#bar-months", "#bar-track", "#bar-ticks", "#bar-int"], { y: -260, opacity: 0, filter: "blur(10px)", duration: 0.28, ease: "power3.in" }, 8.8);
+    window.__timelines["bar"] = tl;
+  </script>
+</template>

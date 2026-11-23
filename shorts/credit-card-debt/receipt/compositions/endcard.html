@@ -1,0 +1,83 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #end-bg {
+      position: absolute;
+      inset: 0;
+      background: #b3141b;
+    }
+    #end-part {
+      position: absolute;
+      left: 48px;
+      right: 192px;
+      top: 320px;
+      text-align: center;
+      font-family: "League Gothic", sans-serif;
+      font-size: 200px;
+      line-height: 1;
+      color: #faf7f0;
+    }
+    #end-rate {
+      position: absolute;
+      left: 48px;
+      right: 192px;
+      top: 540px;
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 320px;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      color: #faf7f0;
+    }
+    #end-note {
+      position: absolute;
+      left: 108px;
+      width: 720px;
+      top: 950px;
+      text-align: center;
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 1.35;
+      color: #faf7f0;
+      opacity: 0.85;
+    }
+  </style>
+  <div id="root" data-composition-id="endcard" data-width="1080" data-height="1920">
+    <div id="end-bg"></div>
+    <div id="end-part">PART 2</div>
+    <div id="end-rate"><span id="end-rate-num">24</span>%</div>
+    <div id="end-note">Example: $5,000 at 24% APR. Minimum = interest + 1%. Not financial advice.</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const rateEl = document.querySelector("#end-rate-num");
+    const rate = { v: 24 };
+
+    tl.fromTo("#end-bg", { backgroundColor: "#faf7f0" }, { backgroundColor: "#b3141b", duration: 0.4, ease: "power2.inOut" }, 0);
+    tl.fromTo("#end-part", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 0.2);
+    tl.fromTo("#end-note", { opacity: 0 }, { opacity: 0.85, duration: 0.25, ease: "none" }, 0.45);
+    tl.fromTo("#end-rate", { opacity: 0, scale: 1.2 }, { opacity: 1, scale: 1, duration: 0.4, ease: "expo.out" }, 1.6);
+    // 24% rolls down to 0% on "zero"
+    tl.fromTo(
+      rate,
+      { v: 24 },
+      {
+        v: 0,
+        duration: 0.42,
+        ease: "none",
+        onUpdate: () => {
+          rateEl.textContent = String(Math.round(rate.v / 6) * 6);
+        },
+      },
+      2.55,
+    );
+    tl.fromTo("#end-rate", { color: "#faf7f0" }, { color: "#ffd60a", duration: 0.01 }, 2.97);
+    tl.fromTo("#end-rate", { scale: 1.12 }, { scale: 1, duration: 0.35, ease: "expo.out", immediateRender: false }, 2.97);
+    window.__timelines["endcard"] = tl;
+  </script>
+</template>
