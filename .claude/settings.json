@@ -1,0 +1,10 @@
+{
+  "extraKnownMarketplaces": {
+    "contentskills": {
+      "source": { "source": "github", "repo": "blotato/contentskills" }
+    }
+  },
+  "enabledPlugins": {
+    "contentskills@contentskills": true
+  }
+}
